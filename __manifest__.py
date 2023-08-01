@@ -17,17 +17,20 @@
 #
 ##############################################################################
 {
-    'name': 'product_usd_currency',
-    'description': 'Setea la moneda USD en el producto',
+    'name': 'rangetowers_purchase',
+    'description': 'Rangetowers Purchase',
     'license': 'AGPL-3',
-    'category': 'Product',
+    'category': 'Purchase',
     'data': [
+        'purchase_view.xml',
+        'security/ir.model.access.csv',
     ],
     'demo': [
     ],
     'depends': [
         'base',
-        'product',
+        'mail',
+        'purchase',
     ],
     'installable': True,
     'test': [],
