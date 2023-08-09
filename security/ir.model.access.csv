@@ -1,5 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_partner_document_user,access.partner.document.user,rangetowers_purchase.model_partner_document,base.group_user,1,1,1,1
 access_partner_document_tag_user,access.partner.document.tag.user,rangetowers_purchase.model_partner_document_tag,base.group_user,1,1,1,1
+access_partner_document_type_user,access.partner.document.type.user,rangetowers_purchase.model_partner_document_type,base.group_user,1,1,1,1
 access_res_partner_equipment_user,access.partner.equipment.user,rangetowers_purchase.model_res_partner_equipment,base.group_user,1,1,1,1
 access_res_partner_capability_user,access.partner.capability.user,rangetowers_purchase.model_res_partner_capability,base.group_user,1,1,1,1

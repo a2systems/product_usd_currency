@@ -35,6 +35,12 @@ class PartnerDocumentTag(models.Model):
 
     name = fields.Char('Name')
 
+class PartnerDocumentType(models.Model):
+    _name = 'partner.document.type'
+    _description = 'partner.document.type'
+
+    name = fields.Char('Name')
+
 class PartnerDocument(models.Model):
     _name = 'partner.document'
     _description = 'partner.document'
@@ -51,5 +57,5 @@ class PartnerDocument(models.Model):
     deadline = fields.Date('Deadline')
     partner_id = fields.Many2one('res.partner','Contact')
     parent_id = fields.Many2one('res.partner','Company')
-    document_type = fields.Selection(selection=[('insurance','Insurance'),('work_permit','Work Permit'),('certification','Certification')],string='Document Type')
+    document_type_id = fields.Many2one('partner.document.type',string='Document Type')
     tag_ids = fields.Many2many(comodel_name='partner.document.tag',relname='partner_document_tag_rel',col1='partner_id',col2='tag_id',string='Tags')

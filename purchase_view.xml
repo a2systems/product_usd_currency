@@ -5,7 +5,7 @@
 	<field name="model">res.partner</field>
 	<field name="inherit_id" ref="base.view_partner_form"></field>
 	<field name="arch" type="xml">
-		<xpath expr="//notebook" position="inside">
+		<xpath expr="//notebook/page[@name='contact_addresses']" position="before">
 			<page string="Documents" >
 				<group>
 					<field name="msa" />
@@ -20,7 +20,7 @@
 					<field name="parent_document_ids" >
 						<tree editable="bottom" >
 							<field name="name" />
-							<field name="document_type" />
+							<field name="document_type_id" />
 							<field name="deadline" />
 							<field name="partner_id" />
 	        					<field name="tag_ids" widget="many2many_tags"/>
@@ -32,7 +32,7 @@
 					<field name="document_ids" >
 						<tree editable="bottom" >
 							<field name="name" />
-							<field name="document_type" />
+							<field name="document_type_id" />
 							<field name="deadline" />
 	        					<field name="tag_ids" widget="many2many_tags"/>
 						</tree>
@@ -51,7 +51,7 @@
 			<sheet>
 				<group>
 			                <field name="name" />
-                			<field name="document_type" />
+                			<field name="document_type_id" />
 		        	        <field name="deadline" />
                 			<field name="parent_id" readonly="1"/>
 			                <field name="partner_id" />
@@ -74,7 +74,7 @@
         <field name="arch" type="xml">
 	   <search>
                 <field name="name" />
-                <field name="document_type" />
+                <field name="document_type_id" />
                 <field name="deadline" />
                 <field name="parent_id" />
                 <field name="partner_id" />
@@ -88,7 +88,7 @@
         <field name="arch" type="xml">
 	   <tree>
                 <field name="name" />
-                <field name="document_type" />
+                <field name="document_type_id" />
                 <field name="deadline" />
                 <field name="parent_id" readonly="1"/>
                 <field name="partner_id" />
@@ -135,6 +135,31 @@
 	    action="action_rangetower_document_tags"
 	    parent="purchase.menu_procurement_management"
 	    sequence="150"
+    />
+
+    <record id="view_partner_document_type_tree" model="ir.ui.view">
+        <field name="name">partner.document.type.tree</field>
+	<field name="model">partner.document.type</field>
+        <field name="arch" type="xml">
+	   <tree editable="bottom">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_rangetower_document_type">
+        <field name="name">Dcoument Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">partner.document.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_rangetower_document_type"
+	    name="Document Types"
+	    action="action_rangetower_document_type"
+	    parent="purchase.menu_procurement_management"
+	    sequence="200"
     />
 
 
