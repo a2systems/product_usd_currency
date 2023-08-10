@@ -53,6 +53,7 @@ class PartnerDocument(models.Model):
             res.parent_id = res.partner_id.parent_id.id
         return res
 
+    document_path = fields.Char('Company/Employee documents')
     name = fields.Char('Name')
     deadline = fields.Date('Deadline')
     partner_id = fields.Many2one('res.partner','Contact')
