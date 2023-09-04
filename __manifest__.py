@@ -17,20 +17,17 @@
 #
 ##############################################################################
 {
-    'name': 'rangetowers_purchase',
-    'description': 'Rangetowers Purchase',
+    'name': 'Product USD Currency',
+    'description': 'product_usd_currency',
     'license': 'AGPL-3',
-    'category': 'Purchase',
+    'category': 'Sales',
     'data': [
-        'purchase_view.xml',
-        'security/ir.model.access.csv',
+        'product_view.xml'
     ],
     'demo': [
     ],
     'depends': [
-        'base',
-        'mail',
-        'purchase',
+        'account',
     ],
     'installable': True,
     'test': [],
